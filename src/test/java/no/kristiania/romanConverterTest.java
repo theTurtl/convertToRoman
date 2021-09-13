@@ -19,10 +19,16 @@ public class romanConverterTest {
     void convertThreeToIII() {
         assertEquals("III", toRoman(3));
     }
+    
 
     @Test
     void convertFourToIV() {
         assertEquals("IV", toRoman(4));
+    }
+
+    @Test
+    void convertFiveToV() {
+        assertEquals("V", toRoman(5));
     }
 
     private Object toRoman(int number) {
@@ -35,6 +41,9 @@ public class romanConverterTest {
         }
         if (number == 3) {
             result = "III";
+        }
+        if (number == 4) {
+            result = "IV";
         }
         return result;
     }

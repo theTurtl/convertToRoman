@@ -10,10 +10,17 @@ public class romanConverterTest {
         assertEquals("I", toRoman(1));
     }
 
+    @Test
+    void convertTwoToII() {
+        assertEquals("II", toRoman(2));
+    }
+
     private Object toRoman(int i) {
+        String result = "";
         if (i == 1) {
-            return "I";
+            result = "I";
         }
+        return result;
     }
 
 }

@@ -11,5 +11,9 @@ public class romanConverterTest {
     }
 
     private Object toRoman(int i) {
+        if (i == 1) {
+            return "I";
+        }
     }
+
 }

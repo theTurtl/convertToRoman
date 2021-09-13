@@ -51,6 +51,26 @@ public class romanConverterTest {
         assertEquals("XIX", toRoman(19));
     }
 
+    @Test
+    void convert20ToXX() {
+        assertEquals("XX", toRoman(20));
+    }
+
+    @Test
+    void convert50ToL() {
+        assertEquals("L", toRoman(50));
+    }
+
+    @Test
+    void convert100ToC() {
+        assertEquals("C", toRoman(100));
+    }
+
+    @Test
+    void convert500ToD() {
+        assertEquals("D", toRoman(500));
+    }
+
     private Object toRoman(int number) {
         String result = "";
         int input = number;
@@ -62,22 +82,32 @@ public class romanConverterTest {
                     input -= 1;
                 }
             }
-            if (number == 4) {
+            if (input == 4) {
                 result = "IV";
                 input -= 4;
             }
-            if (number == 5) {
+            if (input == 5) {
                 result = "V";
                 input -= 5;
             }
-            if (number == 9) {
+            if (input == 9) {
                 result += "IX";
                 input -= 9;
             }
 
-            if (input >= 10) {
+            if (input >= 10 && input < 50) {
                 result += "X";
                 input -= 10;
+            }
+
+            if (input >= 50 && input < 100) {
+                result += "L";
+                input -= 50;
+            }
+
+            if (input >= 100) {
+                result += "C";
+                input -= 100;
             }
         }
 

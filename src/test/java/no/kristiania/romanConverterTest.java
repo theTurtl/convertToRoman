@@ -20,13 +20,21 @@ public class romanConverterTest {
         assertEquals("III", toRoman(3));
     }
 
-    private Object toRoman(int i) {
+    @Test
+    void convertFourToIV() {
+        assertEquals("IV", toRoman(4));
+    }
+
+    private Object toRoman(int number) {
         String result = "";
-        if (i == 1) {
+        if (number == 1) {
             result = "I";
         }
-        if (i == 2) {
+        if (number == 2) {
             result = "II";
+        }
+        if (number == 3) {
+            result = "III";
         }
         return result;
     }

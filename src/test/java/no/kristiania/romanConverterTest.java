@@ -36,6 +36,11 @@ public class romanConverterTest {
         assertEquals("IX", toRoman(9));
     }
 
+    @Test
+    void convertTenToX() {
+        assertEquals("X", toRoman(10));
+    }
+
     private Object toRoman(int number) {
         String result = "";
         if(number <= 3) {
@@ -46,6 +51,8 @@ public class romanConverterTest {
             result = "IV";
         }else if (number == 5) {
             result = "V";
+        }else if (number == 9) {
+            result = "IX";
         }
         return result;
     }

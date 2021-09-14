@@ -62,6 +62,11 @@ public class romanConverterTest {
     }
 
     @Test
+    void convert58ToLVIII() {
+        assertEquals("LVIII", toRoman(58));
+    }
+
+    @Test
     void convert100ToC() {
         assertEquals("C", toRoman(100));
     }
@@ -69,6 +74,11 @@ public class romanConverterTest {
     @Test
     void convert500ToD() {
         assertEquals("D", toRoman(500));
+    }
+
+    @Test
+    void convert1000ToM() {
+        assertEquals("M", toRoman(1000));
     }
 
     private Object toRoman(int number) {
@@ -83,11 +93,11 @@ public class romanConverterTest {
                 }
             }
             if (input == 4) {
-                result = "IV";
+                result += "IV";
                 input -= 4;
             }
-            if (input == 5) {
-                result = "V";
+            if (input >= 5 && input < 9) {
+                result += "V";
                 input -= 5;
             }
             if (input == 9) {
@@ -105,9 +115,14 @@ public class romanConverterTest {
                 input -= 50;
             }
 
-            if (input >= 100) {
+            if (input >= 100 && input < 500) {
                 result += "C";
                 input -= 100;
+            }
+
+            if (input >= 500) {
+                result += "D";
+                input -= 500;
             }
         }
 

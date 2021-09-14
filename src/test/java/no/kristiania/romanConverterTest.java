@@ -81,6 +81,12 @@ public class romanConverterTest {
         assertEquals("M", toRoman(1000));
     }
 
+    @Test
+    void convert3999ToMMMCMXCIX() {
+        assertEquals("MMMCMXCIX", toRoman(3999));
+    }
+
+
     private Object toRoman(int number) {
         String result = "";
         int input = number;
@@ -120,9 +126,14 @@ public class romanConverterTest {
                 input -= 100;
             }
 
-            if (input >= 500) {
+            if (input >= 500 && input < 1000) {
                 result += "D";
                 input -= 500;
+            }
+
+            if (input >= 1000) {
+                result += "M";
+                input -= 1000;
             }
         }
 

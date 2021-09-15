@@ -8,21 +8,7 @@ public class userInput {
             Scanner scanner = new Scanner(System.in);
             int number = scanner.nextInt();
             System.out.println("Tallet " + "er " + romanConverter(number) + " i romerske numre.");
-            programHandler();
 
-        }
-
-        private void programHandler() {
-            System.out.println("");
-            System.out.println("Vil du prøve på nytt?");
-            System.out.println("    Ja    /   Nei    ");
-            System.out.println("Svar: ");
-            Scanner quit = new Scanner(System.in);
-            String response = quit.next();
-            if (response.toLowerCase() == "ja") {
-                inputField();
-            }else if(response.toLowerCase() == "nei") {
-            }
         }
 
         public String romanConverter(int number){

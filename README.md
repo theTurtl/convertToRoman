@@ -1,3 +1,5 @@
+Group members: Adrian Aspevik and Anneli Johnsen
+
 Link to video:
 (Note: video does not contain refactoring, but has been a part of the assignment)
 

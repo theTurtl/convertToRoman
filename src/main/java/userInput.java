@@ -19,9 +19,9 @@ public class userInput {
             System.out.println("Svar: ");
             Scanner quit = new Scanner(System.in);
             String response = quit.next();
-            if (response == "Ja" || response == "ja") {
+            if (response.toLowerCase() == "ja") {
                 inputField();
-            }else if(response == "Nei" || response == "nei") {
+            }else if(response.toLowerCase() == "nei") {
             }
         }
 
